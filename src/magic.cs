@@ -57,17 +57,17 @@ namespace ExampleMods
                 if (secondsUsed > 0.6)
                 {
                     Vec3d pos =
-                            byEntity.Pos.XYZ.Add(0, byEntity.EyeHeight, 0)
+                            byEntity.LocalEyePos
                             .Ahead(1f, byEntity.Pos.Pitch, byEntity.Pos.Yaw)
                         ;
 
                     Vec3f speedVec = new Vec3d(0, 0, 0).Ahead(5, byEntity.Pos.Pitch, byEntity.Pos.Yaw).ToVec3f();
-                    particles.minVelocity = speedVec;
+                    particles.MinVelocity = speedVec;
                     Random rand = new Random();
-                    particles.color = ColorUtil.ToRgba(255, rand.Next(0, 255), rand.Next(0, 255), rand.Next(0, 255));
-                    particles.minPos = pos.AddCopy(-0.05, -0.05, -0.05);
-                    particles.addPos.Set(0.1, 0.1, 0.1);
-                    particles.minSize = 0.1F;
+                    particles.Color = ColorUtil.ToRgba(255, rand.Next(0, 255), rand.Next(0, 255), rand.Next(0, 255));
+                    particles.MinPos = pos.AddCopy(-0.05, -0.05, -0.05);
+                    particles.AddPos.Set(0.1, 0.1, 0.1);
+                    particles.MinSize = 0.1F;
                     particles.SizeEvolve = EvolvingNatFloat.create(EnumTransformFunction.SINUS, 10);
                     byEntity.World.SpawnParticles(particles);
                 }
