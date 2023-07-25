@@ -3,9 +3,9 @@
   "name": "MagicWand",
   "description": "Magic ... particles everywhere",
   "author": "CreativeMD",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependency": {
-    "game": "1.9"
+    "game": "1.18.5"
   },
-  "website": "http://wiki.vintagestory.at/index.php?title=Adding_Block_Behavior"
+  "website": "https://wiki.vintagestory.at/index.php/Modding:Block_and_Item_Interactions"
 }
